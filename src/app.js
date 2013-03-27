@@ -1,6 +1,6 @@
 var defaults = {
     time: 0,
-    text: 'До конца перерыва осталось:'
+    text: 'Hello!'
 };
 var timer = null;
 var stopped = false;
