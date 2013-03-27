@@ -31,7 +31,6 @@ function makeTime (time) {
 
 function draw () {
     $('.time').html(makeTime(timer.time));
-    $('.text').html(timer.text);
 }
 
 function timeChanged (time) {
@@ -79,7 +78,7 @@ $(function() {
     layout = $('.layout');
     locateLayout();
     $('.time').blur(timeInputChanged).focus(timeInputFocus);
-    $('.text').blur(textInputChanged);
+    $('.text').blur(textInputChanged).html(timer.text);
 
     setInterval(function() {
         timeChanged();
