@@ -1,0 +1,8 @@
+.text, .time {
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+}
+.layout {
+    position: relative;
+}
