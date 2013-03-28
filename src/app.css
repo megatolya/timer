@@ -1,7 +1,10 @@
-.text, .time {
+.text, .time, .text2 {
     text-align: center;
     font-size: 30px;
     position: relative;
+}
+.time {
+    font-size: 40px;
 }
 .layout {
     position: relative;

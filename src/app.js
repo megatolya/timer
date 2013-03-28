@@ -1,12 +1,14 @@
 var defaults = {
     time: 0,
-    text: 'Hello!'
+    text: 'Hello!',
+    text2: 'I\'m timer!'
 };
 var timer = null;
 var stopped = false;
 var layout;
 
-function save(key, value) { localStorage.setItem(key, JSON.stringify(value));
+function save(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
 }
 
 function load(key) {
@@ -68,6 +70,13 @@ function textInputChanged () {
     save('timer', timer);
 }
 
+
+function text2InputChanged () {
+    text = $(this).html();
+    timer.text2 = text;
+    save('timer', timer);
+}
+
 function locateLayout() {
     var winHeigth = $(window).height();
     layout.css('top', winHeigth / 2 - layout.height() / 2 );
@@ -79,6 +88,7 @@ $(function() {
     locateLayout();
     $('.time').blur(timeInputChanged).focus(timeInputFocus);
     $('.text').blur(textInputChanged).html(timer.text);
+    $('.text2').blur(text2InputChanged).html(timer.text2);
 
     setInterval(function() {
         timeChanged();
